@@ -2,12 +2,13 @@ export default {
     hostingPort: 8085,
     apiSettings: {
         enabledApi: true,
-        apiUrl: "http://api.lumigame.com",
-        authUrl: "http://auth.lumigame.com",
+        apiUrl: "http://l2-api.lumigame.com",
+        authUrl: "http://l2-auth.lumigame.com",
         client: {
             id: "game-server",
             secret: "gameserver@20luminet&",
         },
+
         useAuthenticate: true,
         requestTimeout: 10000,
         placeBetTimeout: 4500,
@@ -16,7 +17,7 @@ export default {
     mainServerApiSettings: {
         url: "http://localhost:8080/api",
         auth: {
-            url: "http://auth.lumigame.com",
+            url: "http://l2-auth.lumigame.com",
             id: "game-services",
             secret: "gameservices@20luminet&",
         },
@@ -41,7 +42,7 @@ export default {
         },
     },
     sentry: {
-        sentryUrl: "https://6b166df44b284094b8d9da0f98837f35@sentryuat.sabagame.com/150",
+        sentryUrl: "https://a30f076d2be94420b44d57571f62a8bb@sentryuat.sabagame.com/170",
         logIdentifier: "vip-fish-prawn-crab",
         env: "LOCAL",
     },
@@ -50,5 +51,5 @@ export default {
     },
     adminSecretKey: "asWDEerfOIdgsdqRTFabvmgh",
     enableCorsWs: false,
-    corsUrls: ["http://localhost:7456", "http://localhost:7000", "http://games.lumigame.com", "http://admin.lumigame.com"],
+    corsUrls: ["http://localhost:7456", "http://localhost:7000", "http://l2-games.lumigame.com", "http://l2-admin.lumigame.com"],
 };
