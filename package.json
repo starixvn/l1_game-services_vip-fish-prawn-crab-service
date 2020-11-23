@@ -2,7 +2,7 @@
     "name": "vip-fish-prawn-crab-service",
     "version": "1.0.0",
     "main": "./src/app.js",
-    "repository": "https://git3.nexdev.net/l1/game-services/vip-fish-prawn-crab-service.git",
+    "repository": "https://git3.nexdev.net/l2/game-services/vip-fish-prawn-crab-service.git",
     "author": "pentagon",
     "license": "MIT",
     "type": "module",
