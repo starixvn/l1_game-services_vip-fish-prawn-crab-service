@@ -1,5 +1,5 @@
 export default {
-    hostingPort: 8004,
+    hostingPort: 8504,
     apiSettings: {
         enabledApi: true,
         apiUrl: "http://10.99.99.51:8310",
