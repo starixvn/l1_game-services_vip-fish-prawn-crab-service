@@ -7,7 +7,7 @@ export default class Bot extends Table.TableGameBot {
     constructor(definition, gameData) {
         super(definition, gameData, null);
 
-        this.betChoiceRatio = { MainOpts: 96, SubOpts: 4 };
+        this.betChoiceRatio = { MainOpts: 98, SubOpts: 2 };
 
         this.mainOpts = ["stag", "gourd", "rooster", "fish", "crab", "prawn", "mountain", "ocean"];
         this.subOpts = ["anyTriple"];
