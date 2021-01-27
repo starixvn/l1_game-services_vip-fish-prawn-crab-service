@@ -1,10 +1,4 @@
-variables:
-  SERVICE_WORKING_PATH: /l2/vip-fish-prawn-crab-service/
-  SERVICE_NAME: l2-vip-fish-prawn-crab-service
-  DOCKER_IMAGE_PATH: l2/game-services/vip-fish-prawn-crab-service
-  
-  
 include:
-  - project: "ci/luminet/common-ci"
-    ref: L2
-    file: "game-service-nodejs-ci/gitlab-ci.yml"
+  - project: "ci/repos-ci/pentagon_l2_vip_fish_prawn_crab_service"
+    ref: master
+    file: "gitlab-ci.yml"
