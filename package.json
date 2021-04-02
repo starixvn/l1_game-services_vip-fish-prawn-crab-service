@@ -14,11 +14,8 @@
         "reg": "npm set registry http://npm.lumigame.com"
     },
     "dependencies": {
-        "chance": "^1.1.7",
         "nodemon": "^2.0.4",
-        "random": "^2.2.0",
-        "random-js": "^2.1.0",
-        "sc-game-base": "^1.17.5"
+        "sc-game-base": "1.19.1-beta.6"
     },
     "devDependencies": {
         "@commitlint/cli": "^9.1.2",
