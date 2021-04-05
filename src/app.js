@@ -1,15 +1,11 @@
 import Chance from "chance";
-import { Table } from "sc-game-base";
+import { Core, Table } from "sc-game-base";
 
 import appConfigs from "./app-configs";
 import constants from "./constants";
-import { SettleGameRoundConsumer } from "./consumers";
-import { Bot, GameCron } from "./crons";
 import gameSettings from "./game-settings";
 import { DiceRandom } from "./helpers";
-import { bets, tmpBets } from "./models/vip-fish-prawn-crab-bets";
-import VipFishPrawnCrabRounds from "./models/vip-fish-prawn-crab-rounds";
-import Startup from "./startup";
+import VipFishPrawnCrabContainerRegistry from "./vip-fishprawncrab-container-registry";
 
 const generateResult = () => {
     let resultArray = [];
@@ -49,20 +45,9 @@ const getSettlementResult = (roundResult) => {
 
 const run = async () => {
     const gameData = new Table.TableGameData(gameSettings.durations.wholeRound);
-
-    const definition = new Table.TableGameDefinition(
-        gameSettings,
-        generateResult,
-        getSettlementResult,
-        VipFishPrawnCrabRounds,
-        bets,
-        tmpBets,
-        null
-    );
-
-    const gameCron = new GameCron(definition, gameData, new Bot(definition, gameData), new SettleGameRoundConsumer(definition, gameData));
-    const startup = new Startup(appConfigs, definition, gameData, gameCron);
-    const app = new Table.TableGameApp(appConfigs, definition, gameData, startup);
+    const definition = new Table.TableGameDefinition(gameSettings, generateResult, getSettlementResult);
+    const container = new VipFishPrawnCrabContainerRegistry().register(appConfigs, definition, gameData);
+    const app = new Core.BaseGameApp(container);
 
     await app.run();
 };

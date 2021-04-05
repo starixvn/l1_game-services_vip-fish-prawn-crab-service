@@ -2,7 +2,7 @@ import { Table } from "sc-game-base";
 
 import constants from "../constants";
 
-export default class SettleGameRoundConsumer extends Table.EventConsumers.SettleGameRoundConsumer {
+export default class SettleGameRoundConsumer extends Table.EventConsumers.TableSettleGameRoundConsumer {
     async settleRound() {
         const resultFromAdmin = this.gameData.settlementResultFromAdmin;
         const generatedResult = this.definition.generateResult();
