@@ -18,7 +18,7 @@
         "nodemon": "^2.0.4",
         "random": "^2.2.0",
         "random-js": "^2.1.0",
-        "sc-game-base": "1.19.1-beta.5"
+        "sc-game-base": "1.20.0"
     },
     "devDependencies": {
         "@commitlint/cli": "^9.1.2",
