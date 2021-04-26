@@ -42,7 +42,7 @@ export default {
         },
     },
     sentry: {
-        sentryUrl: "http://c6c009440d6544b6bc8aca47f6ff8058@10.99.99.187:803/120",
+        sentryUrl: "http://2b5b82bf699543ddb296364568bc30be@10.99.99.187:803/52",
         logIdentifier: "vip-fish-prawn-crab",
         env: "PROD",
     },
