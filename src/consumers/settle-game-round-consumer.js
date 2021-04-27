@@ -2,33 +2,7 @@ import { Table } from "sc-game-base";
 
 import constants from "../constants";
 
-export default class SettleGameRoundConsumer extends Table.EventConsumers.SettleGameRoundConsumer {
-    async settleRound() {
-        const resultFromAdmin = this.gameData.settlementResultFromAdmin;
-        const generatedResult = this.definition.generateResult();
-        const result =
-            this.gameData.roundId === resultFromAdmin.roundId ? { ...generatedResult, ...resultFromAdmin.result } : generatedResult;
-        const settlementResult = this.definition.settle(result);
-        const newRound = await this.definition.roundRepository.create({
-            result,
-            settlementResult,
-            time: new Date(),
-        });
-
-        if (newRound) {
-            const finish = {
-                settlementResult,
-                result,
-                roundId: newRound.id,
-                time: newRound.time,
-            };
-
-            this.gameData.roundId = finish.roundId + 1;
-
-            await this.settleBets(finish);
-        }
-    }
-
+export default class SettleGameRoundConsumer extends Table.EventConsumers.TableSettleGameRoundConsumer {
     async settleBets({ result, settlementResult, roundId, time }) {
         const bets = await this.queryBets(roundId);
 
