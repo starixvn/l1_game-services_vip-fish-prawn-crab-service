@@ -42,7 +42,7 @@ export default {
         },
     },
     sentry: {
-        sentryUrl: "http://49e18ec3f6914baaad6f73ecacd5471a@10.99.99.187:803/116",
+        sentryUrl: "http://58fc00e79ab34a3bab04a79038760cb8@sentry.sabagame.com/8",
         logIdentifier: "vip-fish-prawn-crab",
         env: "AWS",
     },

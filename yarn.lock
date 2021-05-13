@@ -1701,6 +1701,14 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   resolved "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
 
+cors@^2.8.5:
+  version "2.8.5"
+  resolved "http://npm.lumigame.com/cors/-/cors-2.8.5.tgz#eac11da51592dd86b9f06f6e7ac293b3df875d29"
+  integrity sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==
+  dependencies:
+    object-assign "^4"
+    vary "^1"
+
 cosmiconfig@^6.0.0:
   version "6.0.0"
   resolved "http://npm.lumigame.com/cosmiconfig/-/cosmiconfig-6.0.0.tgz"
@@ -4733,7 +4741,7 @@ oauth-sign@~0.9.0:
   resolved "https://registry.npmjs.org/oauth-sign/-/oauth-sign-0.9.0.tgz"
   integrity sha512-fexhUFFPTGV8ybAtSIGbV6gOkSv8UtRbDBnAyLQw4QPKkgNlsH2ByPGtMUqdWkos6YCRmAqViwgZrJc/mRDzZQ==
 
-object-assign@^4.1.0:
+object-assign@^4, object-assign@^4.1.0:
   version "4.1.1"
   resolved "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
@@ -5769,28 +5777,28 @@ sc-api-client@^1.3.0:
     axios "^0.19.2"
     openid-client "^3.15.9"
 
-sc-base-apis@^1.11.0:
-  version "1.11.0"
-  resolved "http://npm.lumigame.com/sc-base-apis/-/sc-base-apis-1.11.0.tgz#ff071e2b2e0172483c229734f51eacd41c36f52d"
-  integrity sha512-UMGiBrBte2WWixbFHuxL+6DRdmmCgQ6c1451qHN1SQRKSFBtX4+7+Fh/iT9SFsQy7ywaDaLjYxDvNS6mx2fAWg==
+sc-base-apis@1.11.3-beta.1:
+  version "1.11.3-beta.1"
+  resolved "http://npm.lumigame.com/sc-base-apis/-/sc-base-apis-1.11.3-beta.1.tgz#69f1a64a41ee9e96e160bcdf93d17e22136ed1aa"
+  integrity sha512-VDwQg3MXFZNcHRdT5fqlg1t401z8LWa3U6Y+5DhiqE2HrkzXJjV3UWiqnP7L8494TcJrFnOMzD/DftWqMM70ag==
   dependencies:
     moment "^2.27.0"
     sc-api-client "^1.3.0"
-    sc-base-database "^1.8.0"
-    sc-common "^1.5.1"
+    sc-base-database "^1.8.2"
+    sc-common "^1.6.1-beta.1"
 
-sc-base-database@^1.8.0:
-  version "1.8.0"
-  resolved "http://npm.lumigame.com/sc-base-database/-/sc-base-database-1.8.0.tgz#54e59bfbf4222e9b90e058947230a383291ae50b"
-  integrity sha512-naKp92rZW+IhVoz6QWmyZmyZy8IYb6yysEQOmYcwIDPWevJBprjKeWiu7BCWGPRCqNHj+VcdOBQ0yR00QUQ9EQ==
+sc-base-database@^1.8.2:
+  version "1.8.2"
+  resolved "http://npm.lumigame.com/sc-base-database/-/sc-base-database-1.8.2.tgz#acf70c253575ed9f9ec8e4264d19739fd93ad818"
+  integrity sha512-AJMOZbnMjDlI9vL0bpiG93eR4krGaXp05JdUnvJ2andLU+T/Zpo3ZzIwBbbkA6jGSfNfJ4374Vxe9kFyk24jsQ==
   dependencies:
     mongoose "^5.9.25"
-    sc-common "^1.5.1"
+    sc-common "^1.6.0"
 
-sc-common@^1.5.1:
-  version "1.5.1"
-  resolved "http://npm.lumigame.com/sc-common/-/sc-common-1.5.1.tgz#e43d050231b13cdf5deb3c5c1584e1359172c124"
-  integrity sha512-3jBzGXJKxvpbdtAFnLSEQo1jFB1V87GFDdU8RxgnhpYKDBq6KF+Tv/pbEQIZ/JqU2sho/T+A1yOyNS8O0gPUcA==
+sc-common@1.6.1-beta.1, sc-common@^1.6.1-beta.1:
+  version "1.6.1-beta.1"
+  resolved "http://npm.lumigame.com/sc-common/-/sc-common-1.6.1-beta.1.tgz#aecda3129ab4f5335ce903a6856130fed82e5c41"
+  integrity sha512-rFTHAVZQBKnjILsSt8G1SJIS1EF0P2Espf1cWE1JiWsHBAUs63ka7K4X2OlJJ76w6MOVevfob6FUv7AZHJG7Sg==
   dependencies:
     "@sentry/node" "^5.19.1"
     jsonwebtoken "^8.5.1"
@@ -5798,15 +5806,27 @@ sc-common@^1.5.1:
     mongoose-long "^0.3.0"
     numeral "^2.0.6"
 
-sc-game-base@1.20.0:
-  version "1.20.0"
-  resolved "http://npm.lumigame.com/sc-game-base/-/sc-game-base-1.20.0.tgz#87ec789715d8d219c9fcb7870327ac31c16ebc59"
-  integrity sha512-WJ5gJjoyFoeHouVPTlkRJKEvR0NuHUOVZq00eX+XhX/A2LvOJqFOXdHYnr21AyFM4ZVfI3lD65a1db9VSiP0Qg==
+sc-common@^1.6.0:
+  version "1.6.0"
+  resolved "http://npm.lumigame.com/sc-common/-/sc-common-1.6.0.tgz#e41e630f4a33e6f4b881a04642d5ea03f9b7a861"
+  integrity sha512-ZZrcVYzgowulytqyCdjUb3uUsBe/YWhV4RqDN6IK1aYhC0RGfFRyYqR9whuRaSar0Hw9RggXwC3Aw1XIES5p2A==
+  dependencies:
+    "@sentry/node" "^5.19.1"
+    jsonwebtoken "^8.5.1"
+    jwks-rsa "^1.8.1"
+    mongoose-long "^0.3.0"
+    numeral "^2.0.6"
+
+sc-game-base@1.21.2-beta.8:
+  version "1.21.2-beta.8"
+  resolved "http://npm.lumigame.com/sc-game-base/-/sc-game-base-1.21.2-beta.8.tgz#8deb117126cde6c29939d30fe4ac284fd08c0dcc"
+  integrity sha512-BLWLES1AN+VAcq57rpx5FfoH0S0rUr1CDgzSnjXv2u0BjKgn30NAQQpboQLlDZhfSqTsemN2dnLHsTeDzTbQDg==
   dependencies:
     awilix "^4.3.1"
     axios "^0.20.0"
     body-parser "^1.19.0"
     chance "^1.1.7"
+    cors "^2.8.5"
     cron "^1.8.2"
     express "^4.17.1"
     helmet "^3.23.3"
@@ -5814,9 +5834,9 @@ sc-game-base@1.20.0:
     mongoose "^5.9.25"
     morgan "^1.10.0"
     openid-client "^4.2.0"
-    sc-base-apis "^1.11.0"
-    sc-base-database "^1.8.0"
-    sc-common "^1.5.1"
+    sc-base-apis "1.11.3-beta.1"
+    sc-base-database "^1.8.2"
+    sc-common "1.6.1-beta.1"
     socket.io "^2.3.0"
 
 sc-semantic-release@^1.1.0:
@@ -6760,7 +6780,7 @@ validate-npm-package-name@^3.0.0, validate-npm-package-name@~3.0.0:
   dependencies:
     builtins "^1.0.3"
 
-vary@~1.1.2:
+vary@^1, vary@~1.1.2:
   version "1.1.2"
   resolved "http://npm.lumigame.com/vary/-/vary-1.1.2.tgz"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
