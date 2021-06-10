@@ -42,14 +42,14 @@ export default {
         },
     },
     sentry: {
-        sentryUrl: "https://95fa47356ece4e42834cb332a1a724bc@sentryuat.sabagame.com/189",
+        sentryUrl: "https://13f39b8359404ed5aec23655e64ccf78@sentry.lumigame.com/2",
         logIdentifier: "vip-fish-prawn-crab",
-        env: "LOCAL",
+        env: "LOCAL-1",
     },
     authenticateSettings: {
         audiences: ["api", "admin-api"],
     },
     adminSecretKey: "asWDEerfOIdgsdqRTFabvmgh",
     enableCorsWs: true,
-    corsUrls: ["http://localhost:7456", "http://localhost:7000", "http://l1-games1.lumigame.com", "http://l1-admin1.lumigame.com"],
+    corsUrls: ["http://localhost:7456", "http://localhost:7000", "https://l1-games1.lumigame.com", "https://l1-admin1.lumigame.com"],
 };

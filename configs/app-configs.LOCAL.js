@@ -2,7 +2,7 @@ export default {
     hostingPort: 5000,
     apiSettings: {
         enabledApi: true,
-        apiUrl: "http://l1_auth_api_local:5000",
+        apiUrl: "http://l1_game_api_local:5000",
         authUrl: "http://l1_auth_api_local:5000",
         client: {
             id: "game-server",
@@ -42,7 +42,7 @@ export default {
         },
     },
     sentry: {
-        sentryUrl: "https://6b166df44b284094b8d9da0f98837f35@sentryuat.sabagame.com/150",
+        sentryUrl: "https://13f39b8359404ed5aec23655e64ccf78@sentry.lumigame.com/2",
         logIdentifier: "vip-fish-prawn-crab",
         env: "LOCAL",
     },
@@ -51,5 +51,5 @@ export default {
     },
     adminSecretKey: "asWDEerfOIdgsdqRTFabvmgh",
     enableCorsWs: false,
-    corsUrls: ["http://localhost:7456", "http://localhost:7000", "http://games.lumigame.com", "http://admin.lumigame.com"],
+    corsUrls: ["http://localhost:7456", "http://localhost:7000", "https://games.lumigame.com", "https://admin.lumigame.com"],
 };
