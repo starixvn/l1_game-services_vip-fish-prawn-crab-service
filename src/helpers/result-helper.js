@@ -15,7 +15,7 @@ const settlementRuleEntries = Object.entries({
 });
 
 export const generateResult = () => {
-    let resultArray = [];
+    const resultArray = [];
     for (let index = 0; index < 100; index++) {
         resultArray.push(DiceRandom.random() - 1);
     }
