@@ -5,6 +5,7 @@ import RandomJS from "random-js";
 const random1 = () => {
     return Math.floor(Math.random() * 6) + 1;
 };
+
 const random2 = () => {
     const chance = new Chance();
     return chance.d6();
