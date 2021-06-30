@@ -2,7 +2,7 @@
     "name": "vip-fish-prawn-crab-service",
     "version": "1.0.0",
     "main": "./src/app.js",
-    "repository": "https://git3.nexdev.net/l2/game-services/vip-fish-prawn-crab-service.git",
+    "repository": "https://git3.nexdev.net/l1/game-services/vip-fish-prawn-crab-service.git",
     "author": "pentagon",
     "license": "MIT",
     "type": "module",
@@ -14,10 +14,11 @@
         "reg": "npm set registry http://npm.lumigame.com"
     },
     "dependencies": {
+        "chance": "^1.1.7",
         "nodemon": "^2.0.4",
-        "random": "^3.0.3",
+        "random": "^2.2.0",
         "random-js": "^2.1.0",
-        "sc-game-base": "1.20.3"
+        "sc-game-base": "~1.23.0"
     },
     "devDependencies": {
         "@commitlint/cli": "^9.1.2",
