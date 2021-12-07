@@ -1,10 +1,8 @@
 import mongoose from "mongoose";
 import { middlewares } from "sc-common";
 import { Table } from "sc-game-base";
-
 import appConfigs from "./app-configs";
 import { PlaceBetConsumer } from "./consumers";
-import AdminSocketRouter from "./routers/AdminSocketRouter";
 
 export default class Startup extends Table.TableGameStartup {
     async configureServices(app) {
@@ -21,11 +19,5 @@ export default class Startup extends Table.TableGameStartup {
         });
 
         router.init(socketClient);
-    }
-
-    initAdminSocketRouter(socketClient) {
-        const router = new AdminSocketRouter();
-
-        router.init(this.definition, this.gameData, socketClient, this.appConfigs.adminSecretKey);
     }
 }
