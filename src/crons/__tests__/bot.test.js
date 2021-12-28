@@ -38,7 +38,7 @@ const gameConfigs = {
         mountain: 5000,
         ocean: 5000,
     },
-    minbet: 10,
+    minbet: 100,
     bot_maxbet: 500,
 };
 
@@ -208,7 +208,7 @@ describe("updateBotInRoomData test", () => {
 
 describe("convertAmountToChip test", () => {
     it("should return amount on chip value list", () => {
-        const amount = 55;
+        const amount = 550_000;
 
         const actualResult = fishPrawnCrabBot.convertAmountToChip(amount);
 
