@@ -9,4 +9,5 @@ export default {
     },
     choices: ["stag", "gourd", "rooster", "fish", "crab", "prawn", "anyTriple", "mountain", "ocean"],
     choicesMapper: { stag: 1, gourd: 2, rooster: 3, fish: 4, crab: 5, prawn: 6, anyTriple: 7, mountain: 8, ocean: 9 },
+    hedgeBetGroups: [["mountain", "ocean"]],
 };
