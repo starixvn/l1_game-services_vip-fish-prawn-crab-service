@@ -11,7 +11,7 @@ export default {
         useAuthenticate: true,
         requestTimeout: 10000,
         placeBetTimeout: 4000,
-        enableApiLogs: true,
+        enabledApiLogs: true,
     },
     socketOptions: {
         pingInterval: 60 * 1000,
@@ -48,7 +48,15 @@ export default {
     },
     adminSecretKey: "asWDEerfOIdgsdqRTFabvmgh",
     enableCorsWs: false,
-    corsUrls: ["http://localhost:7456", "http://localhost:7000", "https://games.lumigame.com", "https://admin.lumigame.com"],
+    corsUrls: [
+        "http://localhost:7456",
+        "http://localhost:7000",
+        "http://localhost:3000",
+        "http://games.lumigame.com",
+        "https://games.lumigame.com",
+        "http://admin.lumigame.com",
+        "https://admin.lumigame.com",
+    ],
     metrics: {
         enable: true,
         secretKey: "6c1f0f28-70f2-46ae-b031-22624a6cd8df",

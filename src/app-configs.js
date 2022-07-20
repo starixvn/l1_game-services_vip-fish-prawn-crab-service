@@ -11,7 +11,7 @@ export default {
         useAuthenticate: true,
         requestTimeout: 10000,
         placeBetTimeout: 4500,
-        enableApiLogs: true,
+        enabledApiLogs: true,
     },
     socketOptions: {
         pingInterval: 60 * 1000,
