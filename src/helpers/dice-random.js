@@ -2,6 +2,8 @@ import Chance from "chance";
 import Random from "random";
 import crypto from "crypto";
 import { Random as RandomJS, MersenneTwister19937 } from "random-js";
+import _ from "lodash";
+import randomInteger from "random-int";
 
 const random1 = () => {
     return crypto.randomInt(1, 7);
@@ -26,11 +28,28 @@ const random5 = () => {
     return Random5.integer(1, 6);
 };
 
-const randomFunctions = [random1, random2, random3, random4, random5];
+function random6() {
+    return _.random(1, 6);
+}
 
-export const random = () => {
+function random7() {
+    return randomInteger(1, 6);
+}
+
+function random8() {
+    return Math.floor(Math.random() * 5) + 1;
+}
+
+const randomModes = {
+    1: [random1, random2, random3, random4, random5],
+    2: [random6],
+    3: [random7, random8],
+};
+
+export const random = (randomMode) => {
+    const randomFunctions = randomModes[randomMode] || randomModes[1];
+
     const chance = new Chance();
-
     const randomFunction = chance.pickone(randomFunctions);
 
     return randomFunction();

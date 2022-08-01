@@ -1,8 +1,43 @@
 import { generateResult, getSettlementResult } from "../result-helper";
 
+const chanceMock = { pickoneIndex: 0 };
+
+jest.mock("chance", () => {
+    return function () {
+        const orig = {
+            ...jest.requireActual("chance"),
+        };
+
+        return {
+            natural: (opt) => {
+                return new orig.Chance().natural(opt);
+            },
+            d6: () => {
+                return new orig.Chance().d6();
+            },
+            integer: (opt) => {
+                return new orig.Chance().integer(opt);
+            },
+            pickone: (arr) => arr[chanceMock.pickoneIndex],
+        };
+    };
+});
+
 describe("generateResult test", () => {
-    it("should return 3 dices having value between 0 and 5", () => {
-        const actualResult = generateResult();
+    const testCases = [
+        { randomMode: 1, pickoneIndex: 0 },
+        { randomMode: 1, pickoneIndex: 1 },
+        { randomMode: 1, pickoneIndex: 2 },
+        { randomMode: 1, pickoneIndex: 3 },
+        { randomMode: 1, pickoneIndex: 4 },
+        { randomMode: 2, pickoneIndex: 0 },
+        { randomMode: 3, pickoneIndex: 0 },
+        { randomMode: 3, pickoneIndex: 1 },
+        { randomMode: 4, pickoneIndex: 0 },
+    ];
+    it.each(testCases)("should return 3 dices having value between 0 and 5", (testCase) => {
+        chanceMock.pickoneIndex = testCase.pickoneIndex;
+        const actualResult = generateResult(testCase.randomMode);
 
         expect(actualResult).toContainAllKeys(["dice1", "dice2", "dice3"]);
         expect(Object.values(actualResult)).toSatisfyAll((dice) => dice >= 0 && dice <= 5);

@@ -14,10 +14,10 @@ const settlementRuleEntries = Object.entries({
     ocean: (diceArray) => diceArray.filter((dice) => dice >= 3).length >= 2,
 });
 
-export const generateResult = () => {
+export const generateResult = (randomMode) => {
     const resultArray = [];
     for (let index = 0; index < 100; index++) {
-        resultArray.push(DiceRandom.random() - 1);
+        resultArray.push(DiceRandom.random(randomMode) - 1);
     }
 
     const chance = new Chance();
