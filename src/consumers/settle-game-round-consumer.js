@@ -14,7 +14,6 @@ export default class SettleGameRoundConsumer extends Table.EventConsumers.TableS
                     const betResult = this.calculateBetResult(settlementResult, bet, odds, result);
 
                     bet.betwin = betResult.totalWin;
-                    bet.thanhtoan = true;
                     bet.paid = true;
 
                     await bet.save();
