@@ -22,7 +22,6 @@ const bet = {
     freeBet: { type: Boolean, default: false },
 
     playerId: { type: Number },
-    operatorId: { type: String, required: false },
     roundId: { type: Number, default: 0 },
     paid: { type: Boolean, default: false },
 };
@@ -33,7 +32,7 @@ const bets = mongoose.model(
         ...bet,
         currency: { type: String, require: true },
         rate: { type: Number, require: true },
-        partnerId: { type: String, require: true },
+        operatorId: { type: String, required: false },
     })
 );
 const tmpBets = mongoose.model("VipFishPrawnCrab_tmpcuoc", new mongoose.Schema(bet));
