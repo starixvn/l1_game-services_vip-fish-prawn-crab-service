@@ -2,15 +2,15 @@ export default {
     hostingPort: 5000,
     apiSettings: {
         enabledApi: true,
-        apiUrl: "http://l1_game_api_local_1:5000",
-        authUrl: "http://l1_auth_api_local_1:5000",
+        apiUrl: "http://l2_game_api_prod:5000",
+        authUrl: "http://l2_auth_api_prod:5000",
         client: {
             id: "game-server",
             secret: "gameserver@20luminet&",
         },
         useAuthenticate: true,
-        requestTimeout: 10000,
         placeBetTimeout: 4000,
+        requestTimeout: 10000, // 10s
         enabledApiLogs: true,
     },
     socketOptions: {
@@ -22,7 +22,7 @@ export default {
     },
     enabledLogs: true,
     database: {
-        url: "mongodb://lmn_backend:LmnBackend@10.10.50.12:39101,10.10.50.13:39101,10.10.50.14:39101/?replicaSet=L1pLocal&appName=VIPFishPrawnCrab",
+        url: "mongodb://lmn_backend:%21%23x97%25uYZv%2A%5E%25%3E%7C%2Aqg%40E7FHi%3F9l%7B9r%3CK@10.99.99.53:37101,10.99.99.54:37102/?replicaSet=L2_SabaMain&appName=VIPFishPrawnCrab",
         options: {
             dbName: "minigame",
             useNewUrlParser: true,
@@ -31,12 +31,12 @@ export default {
         },
     },
     sentry: {
-        sentryUrl: "https://13f39b8359404ed5aec23655e64ccf78@sentry.lumigame.com/2",
+        sentryUrl: "http://2b5b82bf699543ddb296364568bc30be@10.2.189.50:9009/52",
         logIdentifier: "vip-fish-prawn-crab",
-        env: "LOCAL-1",
+        env: "PROD",
     },
     authenticateSettings: {
-        url: "http://l1_auth_api_local_1:5000",
+        url: "http://l2_auth_api_prod:5000",
         id: "game-services",
         secret: "gameservices@20luminet&",
         requestTimeout: 10000,
@@ -44,14 +44,22 @@ export default {
         audiences: ["api", "admin-api"],
     },
     userServiceSettings: {
-        url: "http://l1_user_service_local_1:5000",
+        url: "http://l2_user_service_prod:5000",
     },
-    adminSecretKey: "asWDEerfOIdgsdqRTFabvmgh",
+    adminSecretKey: "asWDEer4yGdgsdqR4uqmKQZgh",
     enableCorsWs: true,
-    corsUrls: ["http://localhost:7456", "http://localhost:7000", "https://l1-games1.lumigame.com", "https://l1-admin1.lumigame.com"],
+    corsUrls: [
+        "https://v-gaming.net",
+        "https://www.v-gaming.net",
+        "http://v-gaming.net",
+        "http://www.v-gaming.net",
+        "http://adm.v-gaming.net",
+        "https://adm.v-gaming.net",
+    ],
     metrics: {
         enable: true,
-        secretKey: "6c1f0f28-70f2-46ae-b031-22624a6cd8df",
+        secretKey: "30d15293-c7de-4c77-9293-b85d6c5bfe1a",
     },
-    enableMsgpackParser: false,
+    enableMsgpackParser: true,
+    chips: [20_000_000, 10_000_000, 5_000_000, 2_000_000, 1_000_000, 500_000, 200_000, 100_000],
 };

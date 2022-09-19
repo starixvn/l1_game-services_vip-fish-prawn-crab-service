@@ -4,8 +4,9 @@ import { Table } from "sc-game-base";
 import constants from "../constants";
 
 export default class Bot extends Table.Crons.TableGameBot {
-    constructor(definition, gameData, publisher, userInfosRepository, tempBetsRepository) {
+    constructor(definition, gameData, publisher, userInfosRepository, tempBetsRepository, appConfigs) {
         super(definition, gameData, publisher, userInfosRepository, tempBetsRepository);
+        this.appConfigs = appConfigs;
 
         this.betChoiceRatio = { MainOpts: 98, SubOpts: 2 };
 
@@ -120,7 +121,7 @@ export default class Bot extends Table.Crons.TableGameBot {
     }
 
     convertAmountToChip(amount) {
-        const chipList = constants.chips.filter((chip) => amount % chip === 0);
+        const chipList = this.appConfigs.chips.filter((chip) => amount % chip === 0);
 
         return chipList.length > 0 ? chipList[0] : this.getMinBet();
     }
