@@ -1,8 +1,6 @@
 import { helpers } from "sc-common";
 import { Table } from "sc-game-base";
 
-import constants from "../constants";
-
 export default class Bot extends Table.Crons.TableGameBot {
     constructor(definition, gameData, publisher, userInfosRepository, tempBetsRepository, appConfigs) {
         super(definition, gameData, publisher, userInfosRepository, tempBetsRepository);
