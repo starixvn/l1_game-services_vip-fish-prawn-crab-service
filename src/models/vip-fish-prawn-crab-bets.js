@@ -3,7 +3,6 @@ import mongoose from "mongoose";
 const bet = {
     uid: { type: String, required: true },
     name: { type: String, required: true },
-    phien: { type: Number, required: true },
 
     stag: { type: Number, default: 0 },
     gourd: { type: Number, default: 0 },
@@ -15,17 +14,14 @@ const bet = {
     mountain: { type: Number, default: 0 },
     ocean: { type: Number, default: 0 },
 
-    thanhtoan: { type: Boolean, default: false },
     betwin: { type: Number, default: 0 },
     time: { type: Date },
     odds: { type: Object },
 
-    memberId: { type: Number },
     siteId: { type: String },
     freeBet: { type: Boolean, default: false },
 
     playerId: { type: Number },
-    operatorId: { type: String, required: false },
     roundId: { type: Number, default: 0 },
     paid: { type: Boolean, default: false },
 };
@@ -34,9 +30,9 @@ const bets = mongoose.model(
     "VipFishPrawnCrab_cuoc",
     new mongoose.Schema({
         ...bet,
-        currency: { type: String, require: true },
-        rate: { type: Number, require: true },
-        partnerId: { type: String, require: true },
+        currency: { type: String, required: true },
+        rate: { type: Number, required: true },
+        operatorId: { type: String, required: false },
     })
 );
 const tmpBets = mongoose.model("VipFishPrawnCrab_tmpcuoc", new mongoose.Schema(bet));

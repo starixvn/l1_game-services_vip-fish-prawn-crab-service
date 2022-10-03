@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import { Table } from "sc-game-base";
 import FishPrawnCrabBot from "../bot";
 import gameSettings from "../../game-settings";
-import constants from "../../constants";
+import appConfigs from "../../app-configs";
 
 const definition = new Table.TableGameDefinition(gameSettings);
 const gameData = new Table.TableGameData(0);
@@ -12,7 +12,7 @@ const publisher = stub(Table.EventPublishers);
 /** @type {mongoose.Model}*/
 const tempBetsRepository = stubMongooseModelStupidly(mongoose.Model);
 const userInfosRepository = stubMongooseModelStupidly(mongoose.Model);
-const fishPrawnCrabBot = new FishPrawnCrabBot(definition, gameData, publisher, userInfosRepository, tempBetsRepository);
+const fishPrawnCrabBot = new FishPrawnCrabBot(definition, gameData, publisher, userInfosRepository, tempBetsRepository, appConfigs);
 const resetTotalBets = { stag: 0, gourd: 0, rooster: 0, fish: 0, crab: 0, prawn: 0, anyTriple: 0, mountain: 0, ocean: 0 };
 const bot = {
     id: 1,
@@ -212,6 +212,6 @@ describe("convertAmountToChip test", () => {
 
         const actualResult = fishPrawnCrabBot.convertAmountToChip(amount);
 
-        expect(constants.chips).toContain(actualResult);
+        expect(appConfigs.chips).toContain(actualResult);
     });
 });

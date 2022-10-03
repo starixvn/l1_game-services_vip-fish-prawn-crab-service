@@ -2,8 +2,8 @@ export default {
     hostingPort: 5000,
     apiSettings: {
         enabledApi: true,
-        apiUrl: "http://l1_game_api_uat:5000",
-        authUrl: "http://l1_auth_api_uat:5000",
+        apiUrl: "http://l2_game_api_uat:5000",
+        authUrl: "http://l2_auth_api_uat:5000",
         client: {
             id: "game-server",
             secret: "gameserver@20luminet&",
@@ -22,7 +22,7 @@ export default {
     },
     enabledLogs: true,
     database: {
-        url: "mongodb://lmn_backend:LmnBackend%4022027@10.99.99.187:27201/?replicaSet=SabaUAT",
+        url: "mongodb://lmn_backend:LmnBackend%4022027@10.99.99.187:37201/?replicaSet=SabaL2UAT&appName=VIPFishPrawnCrab",
         options: {
             dbName: "minigame",
             useNewUrlParser: true,
@@ -31,12 +31,12 @@ export default {
         },
     },
     sentry: {
-        sentryUrl: "http://52368c4019044019885440599c180bda@10.2.190.51:9009/24",
+        sentryUrl: "http://8ac47fca6d3e4a41908896a64ef201ac@10.2.190.51:9009/53",
         logIdentifier: "vip-fish-prawn-crab",
         env: "UAT",
     },
     authenticateSettings: {
-        url: "http://l1_auth_api_uat:5000",
+        url: "http://l2_auth_api_uat:5000",
         id: "game-services",
         secret: "gameservices@20luminet&",
         requestTimeout: 10000,
@@ -44,19 +44,22 @@ export default {
         audiences: ["api", "admin-api"],
     },
     userServiceSettings: {
-        url: "http://l1_user_service_uat:5000",
+        url: "http://l2_user_service_uat:5000",
     },
     adminSecretKey: "asWDEerfOIdgsdqRTFabvmgh",
     enableCorsWs: true,
     corsUrls: [
-        "http://l1uat.sgamesuat.com",
-        "https://l1uat.sgamesuat.com",
-        "http://l1uatadm.sgamesuat.com",
-        "https://l1uatadm.sgamesuat.com",
+        "http://l2uat.sgamesuat.com",
+        "https://l2uat.sgamesuat.com",
+        "http://l2uatadm.sgamesuat.com",
+        "https://l2uatadm.sgamesuat.com",
+        "http://l2uatm.sgamesuat.com",
+        "https://l2uatm.sgamesuat.com",
     ],
     metrics: {
         enable: true,
         secretKey: "6c1f0f28-70f2-46ae-b031-22624a6cd8df",
     },
     enableMsgpackParser: true,
+    chips: [20_000_000, 10_000_000, 5_000_000, 2_000_000, 1_000_000, 500_000, 200_000, 100_000],
 };
