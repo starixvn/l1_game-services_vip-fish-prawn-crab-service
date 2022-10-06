@@ -30,9 +30,9 @@ const bets = mongoose.model(
     "VipFishPrawnCrab_cuoc",
     new mongoose.Schema({
         ...bet,
-        currency: { type: String, required: true },
+        currency: { type: String },
         rate: { type: Number, required: true },
-        operatorId: { type: String, required: false },
+        operatorId: { type: String },
     })
 );
 const tmpBets = mongoose.model("VipFishPrawnCrab_tmpcuoc", new mongoose.Schema(bet));
