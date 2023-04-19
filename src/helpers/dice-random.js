@@ -37,7 +37,7 @@ function random7() {
 }
 
 function random8() {
-    return Math.floor(Math.random() * 5) + 1;
+    return Math.floor(Math.random() * 6) + 1;
 }
 
 const randomModes = {
