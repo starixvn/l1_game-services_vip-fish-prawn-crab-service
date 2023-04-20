@@ -40,7 +40,7 @@ function random8() {
     return Math.floor(Math.random() * 6) + 1;
 }
 
-const randomModes = {
+export const randomModes = {
     1: [random1, random2, random3, random4, random5],
     2: [random6],
     3: [random7, random8],
