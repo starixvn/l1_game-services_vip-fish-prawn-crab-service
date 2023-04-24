@@ -2,27 +2,6 @@ import { generateResult, getSettlementResult } from "../result-helper";
 
 const chanceMock = { pickoneIndex: 0 };
 
-jest.mock("chance", () => {
-    return function () {
-        const orig = {
-            ...jest.requireActual("chance"),
-        };
-
-        return {
-            natural: (opt) => {
-                return new orig.Chance().natural(opt);
-            },
-            d6: () => {
-                return new orig.Chance().d6();
-            },
-            integer: (opt) => {
-                return new orig.Chance().integer(opt);
-            },
-            pickone: (arr) => arr[chanceMock.pickoneIndex],
-        };
-    };
-});
-
 describe("generateResult test", () => {
     const testCases = [
         { randomMode: 1, pickoneIndex: 0 },

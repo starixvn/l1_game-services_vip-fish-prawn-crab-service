@@ -16,16 +16,15 @@ const settlementRuleEntries = Object.entries({
 
 export const generateResult = (randomMode) => {
     const resultArray = [];
+
     for (let index = 0; index < 100; index++) {
         resultArray.push(DiceRandom.random(randomMode) - 1);
     }
 
     const chance = new Chance();
-    const dice1 = resultArray[chance.natural({ min: 0, max: resultArray.length - 1 })];
-    const dice2 = resultArray[chance.natural({ min: 0, max: resultArray.length - 1 })];
-    const dice3 = resultArray[chance.natural({ min: 0, max: resultArray.length - 1 })];
+    const pickedRandoms = chance.pickset(resultArray, 3);
 
-    return { dice1, dice2, dice3 };
+    return { dice1: pickedRandoms[0], dice2: pickedRandoms[1], dice3: pickedRandoms[2] };
 };
 
 export const getSettlementResult = (roundResult) => {

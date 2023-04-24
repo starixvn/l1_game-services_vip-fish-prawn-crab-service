@@ -41,10 +41,14 @@ describe("Result statistic: 10000 times", () => {
         }
 
         //Assert
-    console.log(`======== Run ${totalRounds} rounds for mode ${mode} ========`);
-    console.log(stats);
+        console.log(`======== Run ${totalRounds} rounds for mode ${mode} ========`);
+        console.log(stats);
         Object.keys(constants.resultMapper).forEach((choice) => {
             expect(stats[choice].ratio).toBeGreaterThanOrEqual(0.4);
         });
+
+        expect(stats["anyTriple"].ratio).toBeLessThanOrEqual(0.0315);
+        expect(stats["ocean"].ratio).toBeGreaterThanOrEqual(0.485);
+        expect(stats["mountain"].ratio).toBeGreaterThanOrEqual(0.485);
     });
 });
