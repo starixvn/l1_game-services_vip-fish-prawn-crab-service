@@ -1,10 +1,7 @@
 variables:
-  SMOKE_PRODUCT_NAME: VIPFishPrawnCrab
+    SMOKE_PRODUCT_NAME: VIPFishPrawnCrab
 
 include:
-  - project: "ci/repos-ci/pentagon_l1_vip_fish_prawn_crab_service"
-    ref: master
-    file: "gitlab-ci.yml"
-  - project: "ci/repos-ci/pentagon_l2_vip_fish_prawn_crab_service"
-    ref: master
-    file: "gitlab-ci-mixing.yml"
+    - project: ci/core-cicd
+      ref: main
+      file: luminet.gitlab-ci.yml
