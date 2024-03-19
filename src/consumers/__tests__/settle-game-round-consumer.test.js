@@ -210,7 +210,6 @@ describe("settleBets test", () => {
 
         expect(termConsumer.callEndGame).toHaveBeenCalled();
         expect(userBetResultPublisher.publish).toHaveBeenCalled();
-        expect(roundResultPublisher.publishRoundResult).toHaveBeenCalled();
     });
 });
 

@@ -68,4 +68,14 @@ export default class SettleGameRoundConsumer extends Table.EventConsumers.TableS
     getOddName(result, choice) {
         return constants.oddMapper[Object.values(result).filter((value) => value === constants.resultMapper[choice]).length];
     }
+
+    collectRoundResult(result, settlementResult, roundId) {
+        this.gameData.winningPlayers = {};
+
+        return {
+            result,
+            settlementResult,
+            roundId,
+        };
+    }
 }
