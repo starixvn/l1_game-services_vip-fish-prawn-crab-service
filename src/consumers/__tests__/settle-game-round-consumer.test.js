@@ -1,4 +1,4 @@
-import { stubMongooseModelStupidly } from "jest-micro-auto-stub";
+import { stubMongoose } from "jest-micro-auto-stub";
 import mongoose from "mongoose";
 import SettleGameRoundConsumer from "../settle-game-round-consumer";
 import { Core } from "sc-game-base";
@@ -8,8 +8,8 @@ jest.mock("sc-game-base/src/core/event-publishers/round-result-publisher");
 jest.mock("sc-game-base/src/core/event-publishers/user-bet-result-publisher");
 
 const endGame = jest.fn();
-const roundsRepository = stubMongooseModelStupidly(mongoose.Model);
-const betsRepository = stubMongooseModelStupidly(mongoose.Model);
+const roundsRepository = stubMongoose(mongoose.Model);
+const betsRepository = stubMongoose(mongoose.Model);
 const definition = new Core.GameDefinition({ id: 1, name: "game name" }, jest.fn(), jest.fn());
 const gameData = new Core.GameData();
 gameData.gameConfigs = {

@@ -53,4 +53,9 @@ export default {
     },
     enableMsgpackParser: true,
     chips: [5000, 2000, 1000, 500, 200, 100, 50, 20, 10],
+    otel: {
+        system: "SG",
+        enabled: false,
+        endpoint: "http://10.2.190.51:4318/v1/traces",
+    },
 };

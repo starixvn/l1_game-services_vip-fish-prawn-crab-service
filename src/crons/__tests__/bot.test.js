@@ -1,4 +1,4 @@
-import { stub, stubMongooseModelStupidly } from "jest-micro-auto-stub";
+import { stub, stubMongoose } from "jest-micro-auto-stub";
 import mongoose from "mongoose";
 import { Table } from "sc-game-base";
 import FishPrawnCrabBot from "../bot";
@@ -10,8 +10,8 @@ const gameData = new Table.TableGameData(0);
 const publisher = stub(Table.EventPublishers);
 /** @type {mongoose.Model}*/
 /** @type {mongoose.Model}*/
-const tempBetsRepository = stubMongooseModelStupidly(mongoose.Model);
-const userInfosRepository = stubMongooseModelStupidly(mongoose.Model);
+const tempBetsRepository = stubMongoose(mongoose.Model);
+const userInfosRepository = stubMongoose(mongoose.Model);
 const fishPrawnCrabBot = new FishPrawnCrabBot(definition, gameData, publisher, userInfosRepository, tempBetsRepository, appConfigs);
 const resetTotalBets = { stag: 0, gourd: 0, rooster: 0, fish: 0, crab: 0, prawn: 0, anyTriple: 0, mountain: 0, ocean: 0 };
 const bot = {
@@ -52,8 +52,8 @@ describe("FishPrawnCrabBot inherit test", () => {
 
 describe("resetAllBotData test", () => {
     it("should call resetAllBets and resetAllBotData", async () => {
-        spyOn(Table.Crons.TableGameBot.prototype, "resetAllBotData");
-        spyOn(FishPrawnCrabBot.prototype, "resetAllBets");
+        jest.spyOn(Table.Crons.TableGameBot.prototype, "resetAllBotData");
+        jest.spyOn(FishPrawnCrabBot.prototype, "resetAllBets");
 
         await fishPrawnCrabBot.resetAllBotData();
 
@@ -180,7 +180,7 @@ describe("getTotalBetAmount test", () => {
 
 describe("updateBotInRoomData test", () => {
     it("should call super updateBotInRoomData", async () => {
-        spyOn(Table.Crons.TableGameBot.prototype, "updateBotInRoomData");
+        jest.spyOn(Table.Crons.TableGameBot.prototype, "updateBotInRoomData");
 
         await fishPrawnCrabBot.updateBotInRoomData(bot, "gourd", 20, bot.red);
 
