@@ -3,7 +3,10 @@ import Random from "random";
 import crypto from "crypto";
 import { Random as RandomJS, MersenneTwister19937 } from "random-js";
 import _ from "lodash";
-import randomInteger from "random-int";
+
+const mathRandom = () => {
+    return Math.random();
+};
 
 const random1 = () => {
     return crypto.randomInt(1, 7);
@@ -28,13 +31,23 @@ const random5 = () => {
     return Random5.integer(1, 6);
 };
 
-function random6() {
-    return _.random(1, 6);
-}
+const random6 = () => {
+    const seed = Math.floor(mathRandom() * 100000);
+    const randomJS = new RandomJS(MersenneTwister19937.seed(seed));
+    return randomJS.integer(1, 6);
+};
 
-function random7() {
-    return randomInteger(1, 6);
-}
+const random7 = () => {
+    const seeds = [
+        Math.floor(mathRandom() * 10),
+        Math.floor(mathRandom() * 100),
+        Math.floor(mathRandom() * 1000),
+        Math.floor(mathRandom() * 10000),
+        Math.floor(mathRandom() * 100000),
+    ];
+    const randomJS = new RandomJS(MersenneTwister19937.seedWithArray(seeds));
+    return randomJS.integer(1, 6);
+};
 
 function random8() {
     return Math.floor(Math.random() * 6 + 1);
@@ -42,8 +55,8 @@ function random8() {
 
 export const randomModes = {
     1: [random1, random2, random3, random4, random5],
-    2: [random2, random4, random6],
-    3: [random3, random5, random7, random8],
+    2: [random3, random5, random6, random7, random8],
+    3: [random1, random3, random5, random6, random7],
 };
 
 export const random = (randomMode) => {

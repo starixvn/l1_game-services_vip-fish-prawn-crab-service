@@ -29,7 +29,7 @@ describe("Result statistic: 10000 times", () => {
                 }
 
                 const count = streakCounts[choice] + 1;
-                streakCounts[choice] = count + 1;
+                streakCounts[choice] = count;
                 if (count >= streakNumber) {
                     stats.streaks.total++;
                     stats.streaks[choice]++;
