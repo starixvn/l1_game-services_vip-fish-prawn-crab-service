@@ -2,7 +2,7 @@ import awilix from "awilix";
 import { Table } from "sc-game-base";
 
 import { PlaceBetConsumer, SettleGameRoundConsumer } from "./consumers";
-import { Bot, GameCron } from "./crons";
+import { Bot, GameCron, ProcessBetQueue } from "./crons";
 import {  bets, tmpBets } from "./models/vip-fish-prawn-crab-bets";
 import rounds from "./models/vip-fish-prawn-crab-rounds";
 
@@ -34,6 +34,7 @@ export default class VipFishPrawnCrabContainerRegistry extends Table.TableContai
         this.container.register({
             bot: asClass(Bot).singleton(),
             gameCron: asClass(GameCron).singleton().proxy(),
+            processBetQueue: asClass(ProcessBetQueue).singleton().proxy(),
         });
     }
 }
