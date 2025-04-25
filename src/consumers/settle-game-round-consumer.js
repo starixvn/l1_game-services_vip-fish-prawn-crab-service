@@ -17,10 +17,13 @@ export default class SettleGameRoundConsumer extends Table.EventConsumers.TableS
                     bet.paid = true;
 
                     await bet.save();
-                    await this.callEndGame(bet, roundId, time, betResult);
+                    const endGameResult = await this.callEndGame(bet, roundId, time, betResult);
 
                     this.captureBetResult(bet.uid, betResult, bet.rate);
-                    await this.userBetResultPublisher.publish(bet.uid, betResult);
+
+                    if (endGameResult.isOk) {
+                        await this.userBetResultPublisher.publish(bet.uid, betResult);
+                    }
                 })
             );
         }
