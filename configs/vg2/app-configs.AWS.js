@@ -27,7 +27,6 @@ export default {
             dbName: "minigame",
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            auto_reconnect: true,
         },
     },
     sentry: {
@@ -47,7 +46,9 @@ export default {
         url: "http://localhost:8004/api",
     },
     adminSecretKey: "asWDEer4yGdgsdqR4uqmKQZgh",
-    chips: [20_000_000, 10_000_000, 5_000_000, 2_000_000, 1_000_000, 500_000, 200_000, 100_000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10],
+    chips: [
+        20_000_000, 10_000_000, 5_000_000, 2_000_000, 1_000_000, 500_000, 200_000, 100_000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10,
+    ],
     otel: {
         system: "VG",
         enabled: false,
